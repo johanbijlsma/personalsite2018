@@ -1,0 +1,18 @@
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+       -moz-box-sizing: $box-model; // Firefox <= 19
+            box-sizing: $box-model;
+  }
+
+
+  //text-shadow
+@mixin textshadow($size:2px, $blur:5px, $shadowcolor:$accent-bright){
+    text-shadow: $size $size $blur $shadowcolor;
+
+    @if color = #{$accent-bright}{
+        text-shadow: $size $size $blur $text-color;
+    }
+    @else {
+        text-shadow: $size $size $blur $accent-bright; 
+      }
+ }

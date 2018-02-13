@@ -1,0 +1,52 @@
+// Colours
+$bg-color: rgba(41, 44, 68, 1);
+$accent-bright: rgba(255, 83, 73, 1);
+$off-white: rgba(240, 240, 241, 1);
+$text-color: rgba(24, 205, 202, 1);
+$accent-soft: rgba(79, 128, 225, 1);
+
+
+// osx-buttons
+$osx-close: rgba(247,	70,	69, 1);
+$osx-minimize: rgba(250,	182,	37, 1);
+$osx-full: rgba(39,	198,	47, 1);
+
+// sizes
+$container-max-width: 1280px;
+
+$margin-1: 1rem;
+$margin-2: 2rem;
+$margin-3: 3rem;
+$margin-4: 4rem;
+$margin-5: 5rem;
+$margin-10: 10rem;
+
+$padding-1: 1rem;
+$padding-2: 2rem;
+$padding-3: 3rem;
+$padding-4: 4rem;
+$padding-5: 5rem;
+$padding-10: 10rem;
+
+//tranistions
+
+$transition: all 20ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+// animations
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from,to {
+        color: transparent;
+    }
+    50% {
+      color: $off-white;
+    }
+}

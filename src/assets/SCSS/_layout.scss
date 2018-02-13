@@ -1,0 +1,18 @@
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+.container{
+    max-width: $container-max-width;
+    margin: $margin-2 auto;
+    
+    &--body{
+        max-width: inherit;
+        margin: -$margin-5 auto;
+        border: 1px solid #333;
+        padding: $padding-3;
+        background: $off-white;
+    }
+}

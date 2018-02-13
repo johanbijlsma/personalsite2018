@@ -1,0 +1,114 @@
+/* Style.scss for the styling of my personal site
+Build by Johan Bijlsma | johan.bijlsma24@gmail.com | @johanbijlsma  */
+@import "variables";
+@import "mixins";
+@import "layout";
+
+/* Importing and executing normalize for consistent styling across browsers
+https://necolas.github.io/normalize.css/ */
+
+@import "normalize";
+@include normalize();
+
+@import url("https://fonts.googleapis.com/css?family=Muli");
+
+body {
+  background: $bg-color;
+  font-family: "Muli", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: load 2s 2ms linear;
+}
+// #app is inside the Vue.js app
+#app {
+  color: $text-color;
+
+  // $color-key: random(4);
+
+  // $color-list: $bg-color, $accent-bright, $text-color, $accent-soft;
+  // $nth: nth($color-list, $color-key);
+.header__container{
+  background: $bg-color;
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: auto;
+  box-shadow: 0px 0px 18px rgba(0,0,0,0.5);
+  &--buttons{
+    margin: 0 0 0 -20px;
+    ol{
+      list-style: none;
+      li{
+        display: inline;
+        font-size: 0;
+        padding-right: 0.3rem;
+        &:before{
+          content: "";
+          width: 15px;
+          height: 15px;
+          background: $osx-close;
+          display: inline-block;
+          border-radius: 50%;
+          border: darken($osx-close, 20%) .15rem solid;
+
+        }
+        &:nth-child(2):before{
+          background: $osx-minimize;
+          border: darken($osx-minimize, 20%) .15rem solid;
+
+        }
+        &:nth-child(3):before{
+          background: $osx-full;
+          border: darken($osx-full, 20%) .15rem solid;
+
+        }
+      }
+    }
+  }
+}
+  .pageheader {
+    padding: 0 1.5rem;
+    color: $off-white;
+    // @include textshadow; 
+    font-size: calc(1.5rem + 1.5vw);
+    font-family: monospace;
+    background: $bg-color;
+    line-height: calc(2.5rem + 1.5vw);
+    font-weight: 100;
+
+
+    &::after {
+      content: "|";
+      animation: blink 1s step-end infinite;
+      font-weight: 100;
+      text-shadow: none;
+      color: $off-white;
+
+    }
+    &::before{
+      content: ' >_ whoami ';
+      opacity: 0.4;
+      display: block;
+    }
+    &--scroll {
+      @extend .pageheader;
+      position: sticky;
+      background: $off-white;
+    }
+  }
+}
+
+header {
+  .header__image {
+    background: url("~./assets/images/ilya-pavlov-87438.jpg");
+    // margin: -40px calc(-#{$margin-10}*2) -300px;
+    height: 400px;
+    background-size: cover;
+    // overflow: hidden;
+    background-attachment: fixed;
+    background-position: 60% 90%;
+  }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}

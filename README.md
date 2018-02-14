@@ -1,6 +1,7 @@
 # Johanbijlsma
 
-> Setting up the front-end for my personal site
+> Setting up the front-end for my personal site. Build setup straight from vue-cli.
+
 
 ## Build Setup
 

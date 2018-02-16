@@ -266,7 +266,7 @@ production:
     - delete canary
     - persist_environment_url
   environment:
-    name: production
+    name: Production
     url: http://$CI_PROJECT_PATH_SLUG.$AUTO_DEVOPS_DOMAIN
   artifacts:
     paths: [environment_url.txt]

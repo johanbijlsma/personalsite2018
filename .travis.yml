@@ -1,21 +1,17 @@
-dist: trusty
-sudo: required
-language: node_js
-
-node_js:
-  - "8"
-os:
-  - linux
-env:
-  global:
-    - DBUS_SESSION_BUS_ADDRESS=/dev/null
-    - DISPLAY=:99.0
-    - CHROME_BIN=chromium-browser
-before_script:
-  - sh -e /etc/init.d/xvfb start
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
 install:
   - npm install
-script:
-  - npm run lint
-  - npm run lib:build && npm run link:dist && npm run example:build
-  - npm run build
+
+after_install:
+  - npm run build  
+env:
+  global:
+    - "FTP_USER=" secure:fx+waL328h2GumLMtH4QdCf4oHjlsL/v47RzR3DhJV5quovvpHgVhpTxCB4DnCUmcIVuNqo9FkcUptNqPQx7QSSowasc+FbusGLVmceMQi8lVqzoMgG8/eJbY2LRdZ3MGAo22XUoM8q+Ra/E07z7QTd0VypMj7XpyfqAX9EtjsdHVp7qBLCgKij9YMvtI+GADe4/IFS6/ut/LsNbgx7VFaOq5J2sJIHJc9U56xqz3sgW6S1dPDDYw8+80p8Xjr5kQ30xRhyi+n+zWv8f4LFkqLRAkbEPRnsQ1CH7kvGYBHDWO7yBdItv0f1Nr2m6A3ywBEMxIHbsvEVzJqiZJ8KQvn1gg9fnC8MPgPH5OSx1wHmhjIPNnuhlhKksuZinFV1YChxBFPK5wg6b5GPh3CLINNJuC3De4zOftQ4FzlYElt90ONGNy/+/qHM8SVyxqFkDQQ1GXXiA8Gk1Uv04B4KLBUPvizCFxGk4vRbDJBqKHyZfwM6cK/MxPjQWm9V8LAnvExDmTbKyJQF+IJxbiTrE+1bH/g03gavoWz82pJElmZHz2fuXoh8D+gyrq/Q+Vr9F0twQut2U1VtviqAsiFRKB3oLaz9llCDOZG5i7fbDRbbu1MuBZSdpm13FIPic/SpQvNY2Gh07WYcu6Zr3jY5re+cKLB6fUMlZsLZsFVcj8Ic="
+    - "FTP_PASSWORD=" secure:S+OB91ARNsY9xZ0dwheKeNkkitriokNZJfJz/erbNA0ZZv0Itp+9valjsbRwxfEuSBHnTkEikTrVFR8kaVfWF/RIxgUz1gLALeFQEoKYTaNiwV7bQMohHsQKD/2lwNZEw6wBNcksq5q9ZkWvjb7yMVNXyuDh/QiINbXOX45/L86hVuxIf9RuV6wZ9O+5hn6UuO9a7fUvjYTzBkgZ1amFLYK5xbrjeYJq78qev0XzKTBC3k9aEi0mpHdHnbv++EHel4QZn50spy9xxVhZ0TiF2OvCdsahRa7twTC2mktBdNeRTwbZ0Vp1nvumuXe3iouWKW1egQuGFe39EVeKz+wRPIMVU+rT2DFU7A29Eh0+ruwCcxtRrrhSuaBWDuMNsiKZJoTfKEyLO4NddKv8g1AsB/V1FLjR0J/B37h1z0NgHIZiMZ17bkB940Zi3HcrkG4RXJR24dH5K9eeZwdmjAHT6sNCqAlLVpepttxuZpcSZc8NPE35d5Vp8SYWaQNraERHg+rHLnkIzMAkdNuyVbxrhS/azp8oM6X/Y5e7LH7wZY5Y3QtuNz8a/3KIo5kiS54oS5ksJRuMdfmHTawXSYLgSrcOvOCUfSsfY6ekLjYOmU5Oowao08y2nwtnvvjj8FOoFwnmu1WxM58c8xfvfY8UssP2n0zSz2E3NzpQPNixRu4="
+after_success:
+    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://cmshost.nl/htdocs/"

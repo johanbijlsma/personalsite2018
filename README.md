@@ -2,6 +2,7 @@
 
 > Setting up the front-end for my personal site. Build setup straight from vue-cli.
 
+[![Build Status](https://travis-ci.org/johanbijlsma/personalsite2018.svg?branch=master)](https://travis-ci.org/johanbijlsma/personalsite2018)
 
 ## Build Setup
 

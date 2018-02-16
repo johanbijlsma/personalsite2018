@@ -4,9 +4,9 @@ import introVue from './components/intro.vue';
   <div id="app">
     <nav class="navigation__container">
       <ul>
-        <li class="navigation__links"><router-link :to="{ name: 'intro' }">Home</router-link></li>
-        <li class="navigation__links"><router-link :to="{ name: 'work' }">Work / Portfolio</router-link></li>
-        <li class="navigation__links"><router-link :to="{ name: 'contact' }">Contact  </router-link></li>
+        <li class="navigation__container--links"><router-link :to="{ name: 'intro' }">Home</router-link></li>
+        <li class="navigation__container--links"><router-link :to="{ name: 'work' }">Work / Portfolio</router-link></li>
+        <li class="navigation__container--links"><router-link :to="{ name: 'contact' }">Contact  </router-link></li>
       </ul>
     </nav>
     <div class="header__container">

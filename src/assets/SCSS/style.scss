@@ -112,3 +112,25 @@ header {
 .blinking-cursor {
   animation: blink 1s step-end infinite;
 }
+
+.navigation__container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: $off-white;
+  padding: $padding-1;
+  width: 100vw;
+  z-index: $z-master;
+  ul{
+    list-style: none;
+    text-align: right;
+  }
+  &--links{
+    padding-right: $padding-1;
+    display: inline-block;
+    > a{
+      color: $accent-bright;
+      font-weight: 700;
+    }
+  }
+}

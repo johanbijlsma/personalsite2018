@@ -140,3 +140,56 @@ header {
     }
   }
 }
+.projects{
+ list-style: none;
+ margin-left: 0; 
+ padding: 0!important;
+ &__link{
+   margin-bottom: 1rem;
+   min-height: 200px;
+   background: yellowgreen;
+   padding: $padding-1;
+   position: relative;
+   &:nth-child(odd){
+     background: $text-color;
+   }
+ }
+ &__title{
+   color: $accent-bright;
+   font-weight: 700;
+   margin-bottom: 0;
+ }
+ &__intro{
+   font-weight: 100;
+   float: left;
+ }
+ &__img{
+   float: right;
+   width: 10rem;
+   height:5rem;
+   margin: -20px 0 0 0;
+   border: #999 solid 1px;
+   &:empty{
+    background: #e5e5e5;
+   }
+ }
+ &__taxonomy{
+   list-style: none;
+   margin-left: 0; 
+ padding: 0!important;
+ .tag{
+   background: yellow;
+   display: inline-block;
+   padding: $padding-1;
+   transform: skew(-25deg);
+   margin: $margin-05;
+   > span{
+     transform: skew(25deg);
+     display: inline-block;
+   }
+   &:after{
+     content:"";
+   }
+ }
+ }
+}

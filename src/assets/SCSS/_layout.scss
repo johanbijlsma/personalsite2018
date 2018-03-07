@@ -6,13 +6,19 @@
 
 .container{
     max-width: $container-max-width;
-    margin: $margin-2 auto;
+    margin: $margin-2 auto ;
     
     &--body{
         max-width: inherit;
-        margin: -$margin-5 auto;
+        margin: -$margin-5 auto (-$margin-5);
         border: 1px solid #333;
         padding: $padding-3;
         background: $off-white;
+        position: relative;
+        // animation: load 350ms 200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        @media screen and ($sm-only){
+            margin: -$margin-2 auto (-$margin-2);
+
+        }
     }
 }

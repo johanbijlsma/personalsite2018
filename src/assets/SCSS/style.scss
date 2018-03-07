@@ -10,14 +10,35 @@ https://necolas.github.io/normalize.css/ */
 @import "normalize";
 @include normalize();
 
-@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Lora|Muli");
 
 body {
   background: $bg-color;
   font-family: "Muli", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  animation: load 2s 2ms linear;
+
+  .header__image {
+    background: url("~./assets/images/ilya-pavlov-87438.jpg") no-repeat;
+    // margin: -40px calc(-#{$margin-10}*2) -300px;
+    height: 50vh;
+    background-size: cover;
+    // overflow: hidden;
+    background-attachment: fixed;
+    @media screen and ($md-down) {
+      height: 20vh;
+    }
+  }
+
+  .footer__image {
+    background: url("~./assets/images/schotland.jpeg") no-repeat top center;
+    // margin: -40px calc(-#{$margin-10}*2) -300px;
+    height: 50vh;
+    background-size: cover;
+    // overflow: hidden;
+    background-attachment: fixed;
+    // background-position: 60% 90%;
+  }
 }
 // #app is inside the Vue.js app
 #app {
@@ -27,69 +48,71 @@ body {
 
   // $color-list: $bg-color, $accent-bright, $text-color, $accent-soft;
   // $nth: nth($color-list, $color-key);
-.header__container{
-  background: $bg-color;
-  position: relative;
-  border-radius: 0.8rem;
-  overflow: auto;
-  box-shadow: 0px 0px 18px rgba(0,0,0,0.5);
-  &--buttons{
-    margin: 0 0 0 -20px;
-    ol{
-      list-style: none;
-      li{
-        display: inline;
-        font-size: 0;
-        padding-right: 0.3rem;
-        &:before{
-          content: "";
-          width: 15px;
-          height: 15px;
-          background: $osx-close;
-          display: inline-block;
-          border-radius: 50%;
-          border: darken($osx-close, 20%) .15rem solid;
+  .header__container {
+    background: $bg-color;
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: auto;
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.5);
 
-        }
-        &:nth-child(2):before{
-          background: $osx-minimize;
-          border: darken($osx-minimize, 20%) .15rem solid;
-
-        }
-        &:nth-child(3):before{
-          background: $osx-full;
-          border: darken($osx-full, 20%) .15rem solid;
-
+    &--buttons {
+      margin: 0 0 0 -20px;
+      ol {
+        list-style: none;
+        li {
+          display: inline;
+          font-size: 0;
+          padding-right: 0.3rem;
+          &:before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: $osx-close;
+            display: inline-block;
+            border-radius: 50%;
+            border: darken($osx-close, 20%) 0.15rem solid;
+          }
+          &:nth-child(2):before {
+            background: $osx-minimize;
+            border: darken($osx-minimize, 20%) 0.15rem solid;
+          }
+          &:nth-child(3):before {
+            background: $osx-full;
+            border: darken($osx-full, 20%) 0.15rem solid;
+          }
         }
       }
     }
   }
-}
   .pageheader {
     padding: 0 1.5rem;
     color: $off-white;
-    // @include textshadow; 
+    // @include textshadow;
     font-size: calc(1.5rem + 1.5vw);
     font-family: monospace;
     background: $bg-color;
     line-height: calc(2.5rem + 1.5vw);
     font-weight: 100;
-
-
+    @media screen and ($md-down) {
+      display: none;
+    }
     &::after {
       content: "|";
       animation: blink 1s step-end infinite;
       font-weight: 100;
       text-shadow: none;
       color: $off-white;
-
     }
-    &::before{
-      content: ' >_ whoami ';
+    &::before {
+      content: " >_ whoami ";
       opacity: 0.4;
       display: block;
+      @media screen and ($md-down) {
+        font-size: 0;
+      }
     }
     &--scroll {
+      //not used
       @extend .pageheader;
       position: sticky;
       background: $off-white;
@@ -97,42 +120,55 @@ body {
   }
 }
 
-header {
-  .header__image {
-    background: url("~./assets/images/ilya-pavlov-87438.jpg");
-    // margin: -40px calc(-#{$margin-10}*2) -300px;
-    height: 400px;
-    background-size: cover;
-    // overflow: hidden;
-    background-attachment: fixed;
-    background-position: 60% 90%;
-  }
-}
+// header {
+//   .header__image {
+//     background: url("~./assets/images/ilya-pavlov-87438.jpg");
+//     // margin: -40px calc(-#{$margin-10}*2) -300px;
+//     height: 400px;
+//     background-size: cover;
+//     // overflow: hidden;
+//     background-attachment: fixed;
+//     background-position: 60% 90%;
+//   }
+// }
+
+// body {
+//   .footer__image {
+//     background: url("~./assets/images/schotland.jpg") no-repeat top center;
+//     // margin: -40px calc(-#{$margin-10}*2) -300px;
+//     height: 400px;
+//     background-size: cover;
+//     // overflow: hidden;
+//     background-attachment: fixed;
+//     // background-position: 60% 90%;
+//   }
+// }
 
 .blinking-cursor {
   animation: blink 1s step-end infinite;
 }
 
-.navigation__container{
+.navigation__container {
   position: fixed;
   top: 0;
   right: 0;
-  background: $off-white;
+  background: $off-white-trans;
   padding: $padding-1;
   width: 100vw;
   z-index: $z-master;
-  ul{
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  ul {
     list-style: none;
     text-align: right;
   }
-  &--links{
+  &--links {
     padding-right: $padding-1;
     display: inline-block;
-    > a{
+    > a {
       color: $accent-bright;
       font-weight: 700;
       padding: $padding-1;
-      &.active{
+      &.active {
         background: $accent-soft;
         color: $off-white;
         text-decoration: none;
@@ -140,56 +176,143 @@ header {
     }
   }
 }
-.projects{
- list-style: none;
- margin-left: 0; 
- padding: 0!important;
- &__link{
-   margin-bottom: 1rem;
-   min-height: 200px;
-   background: yellowgreen;
-   padding: $padding-1;
-   position: relative;
-   &:nth-child(odd){
-     background: $text-color;
-   }
- }
- &__title{
-   color: $accent-bright;
-   font-weight: 700;
-   margin-bottom: 0;
- }
- &__intro{
-   font-weight: 100;
-   float: left;
- }
- &__img{
-   float: right;
-   width: 10rem;
-   height:5rem;
-   margin: -20px 0 0 0;
-   border: #999 solid 1px;
-   &:empty{
-    background: #e5e5e5;
-   }
- }
- &__taxonomy{
-   list-style: none;
-   margin-left: 0; 
- padding: 0!important;
- .tag{
-   background: yellow;
-   display: inline-block;
-   padding: $padding-1;
-   transform: skew(-25deg);
-   margin: $margin-05;
-   > span{
-     transform: skew(25deg);
-     display: inline-block;
-   }
-   &:after{
-     content:"";
-   }
- }
- }
+
+.projects {
+  list-style: none;
+  margin-left: 0;
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row;
+  flex-wrap: wrap;
+  &__link {
+    margin-bottom: 1rem;
+    background: yellowgreen;
+    padding: $padding-1;
+    position: relative;
+    width: 40vw;
+    @media screen and ($lg-up) {
+      width: 35vw;
+    }
+    @media screen and ($xlg-only) {
+      width: 30vw;
+    }
+    @media screen and ($md-down) {
+      width: 100vw;
+    }
+    &:nth-child(odd) {
+      background: $text-color;
+    }
+  }
+  &__title {
+    color: $off-white;
+    text-shadow: 1px 1px $accent-soft;
+    font-weight: 700;
+  }
+  &__intro {
+    font-weight: 100;
+    float: left;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: -20px 0 0 0;
+
+    [src=" "] {
+      background: #e5e5e5;
+      &:before {
+        content: "JB";
+        color: $nearly-black;
+        font-family: "lora", serif;
+        text-shadow: 1px 1px $accent-soft;
+        opacity: 0.2;
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 2rem;
+      }
+    }
+    &--extra-padding{
+      padding: 1.3rem;
+    }
+    @media screen and ($lg-down) {
+      width: 100%;
+      clear: both;
+      margin: $margin-1 0;
+    }
+  }
+  &__externalLink, a{
+    padding: $padding-2;
+    border: $off-white-trans dashed 1px;
+    display: inline-block;
+    background-color: $off-white-trans-2;
+    color: $accent-bright;
+    font-weight: 700;
+    text-decoration: none;
+    &--site{
+      &:after{
+        content: "";
+        background: url(~./assets/images/np_earth_888750_FFFFFF.svg) no-repeat;
+        background-size: contain;
+        height: 2rem;
+        width: 2rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: $padding-05;
+      }
+      &:hover{
+        background: $accent-bright;
+        color: $off-white;
+      }
+
+    }
+    &--repo{
+      // background: hotpink;
+      &:after{
+        content: "";
+        background: url(~./assets/images/Git-Logo-White.png) no-repeat;
+        background-size: contain;
+        height: 2rem;
+        width: 3.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: $padding-05;
+
+      }
+      &:hover{
+          background: $accent-bright;
+          color: $off-white;
+        }
+      
+    }
+
+  }
+  &__taxonomy {
+    list-style: none;
+    margin-left: 0;
+    padding: 0 !important;
+    .tag {
+      background: yellow;
+      display: inline-block;
+      padding: $padding-05;
+      transform: skew(-25deg);
+      margin: $margin-05;
+      box-shadow: 3px 4px 6px 1px $accent-bright;
+      > span {
+        transform: skew(25deg);
+        display: inline-block;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+section.offline {
+  background: $accent-soft;
+  margin: $margin-2 (-$margin-2);
+  padding: $padding-2 $padding-4;
+  border-radius: 3px;
+  border-top: 3px solid (darken($accent-soft, 80));
+  color: $off-white;
 }

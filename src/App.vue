@@ -1,6 +1,7 @@
 
 import introVue from './components/intro.vue';
 <template>
+
   <div id="app">
     <nav class="navigation__container">
       <ul>
@@ -23,6 +24,7 @@ import introVue from './components/intro.vue';
 </template>
 
 <script>
+
 export default {
   name: 'App'
   };

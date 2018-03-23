@@ -25,10 +25,10 @@ export default {
     return {
       msg: 'Creative Front-end Developer',
       body:
-        'A creative front-end dev who loves building out cool projects together with a team. I really love working on the look and feel part off a site or application. <br /><br /> Please feel free to browse through both my professional and my hobby projects under <a href="#/work">#work</a>. If you would like to reach out and contact me; you can find more info under <a href="#/contact">#contact</a>',
+        'A creative front-end dev who loves building out cool projects together with a team. I really love working on the look and feel part off a site or application. <br /><br /> Please feel free to browse through both my professional and my hobby projects under <a href="#/work">#work</a>. If you would like to reach out and contact me; you can find more info under <a href="#/contact">#contact</a>.',
       stackMsg: 'Stack',
       stackBody:
-         'HTML5, CSS3, (vanilla) JavaScript, AngularJS, Angular2, VueJS, React, Sass, Webpack, NPM, Gulp, Grunt, Git, Jekyll, Jenkins, Bamboo, Bootstrap, jQuery, Photoshop, Illustrator & Sketch. <br /> <br/> Further experienced in styling projects in Django, Wordpress, Jekyll, or custom build on PHP, .Net and Java. Currently my editor of choice is VS Code, and I enjoy Hyper terminal everyday on my Mac',
+         'HTML5, CSS3, (vanilla) JavaScript, AngularJS, Angular2, VueJS, React, Sass, Webpack, NPM, Gulp, Grunt, Git, Jekyll, Jenkins, Bamboo, Bootstrap, jQuery, Photoshop, Illustrator & Sketch. <br /> <br/> Further experienced in styling projects in Django, Wordpress, Jekyll, or custom build on PHP, .Net and Java. Currently my editor of choice is VS Code, and I enjoy Hyper terminal everyday on my Mac.',
       offlineMsg: 'Offline',
       offlineBody:
          'When not working or coding, I really like hiking outdoors (last year went on a \"4e Musketier Karakterweekend\" to Scotland together with my younger brother Anne), and I\'m also halfway on walking the entire Pieterpad.'

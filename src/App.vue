@@ -4,11 +4,13 @@ import introVue from './components/intro.vue';
 
   <div id="app">
     <nav class="navigation__container">
+      <div class="button__menu menu-closed md-down-visible" id="mobile-toggle" v-bind:class="{active : showMobileMenu }" v-on:click="showMobileMenu = !showMobileMenu">Menu
       <ul>
         <li class="navigation__container--links"><router-link :to="{ name: 'intro' }" exact>Home</router-link></li>
         <li class="navigation__container--links"><router-link :to="{ name: 'work' }">Work / Portfolio</router-link></li>
         <li class="navigation__container--links"><router-link :to="{ name: 'contact' }">Contact  </router-link></li>
       </ul>
+      </div>
     </nav>
     <div class="header__container">
       <div class="header__container--buttons"><ol>
@@ -25,9 +27,13 @@ import introVue from './components/intro.vue';
 
 <script>
 
+
 export default {
-  name: 'App'
+  name: 'App',
+  showMobileMenu: false
+
   };
+
 </script>
 
 // To load the style.scss file

@@ -2,16 +2,13 @@
   <div class="contact">
     <h1>{{ msg }}</h1>
     <p v-html="body"></p>
-    <ul>
-        <li class="contact__buttons">linkedin</li>
-        <li class="contact__buttons">twitter</li>
-        <li class="contact__buttons">github</li>
-        <li class="contact__buttons">codepen.io</li>
+    <ul class="contact__list">
+        <li class="contact__buttons"> <a class="contact__link--linkedin " href="https://www.linkedin.com/in/johanbijlsma/"> linkedin</a></li>
+        <li class="contact__buttons"><a class="contact__link--twitter" href="https:twitter.com/johanbijlsma"> twitter</a></li>
+        <li class="contact__buttons"><a class="contact__link--github" href="https://github.com/johanbijlsma">github</a></li>
+        <li class="contact__buttons"><a class="contact__link--codepen" href="https://codepen.io/johanbijlsma">codepen.io</a></li>
     </ul>
-linkedin (https://www.linkedin.com/in/johanbijlsma/  )
-twitter (https:twitter.com/johanbijlsma)
-github
-codepen.io
+
 
  </div>
 </template>

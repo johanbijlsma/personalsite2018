@@ -58,7 +58,6 @@
         <li class="hobby projects__link"><p class="projects__title">Fysiokolster.nl</p>
         <p class="projects__intro"><img class="projects__img" src="../../static/fysiokolster.png" />	When my wife started her physiotherapy practice i've made the website  using Jekyll. I really like working with a Static Site Generator such as Jekyll because you have the ability to use the logic of a CMS while developing, and then just build it and upload the Dist folder.  </p>
                    <a href="https://www.fysiokolster.nl" class="projects__externalLink--site">FysioKolster</a>
-                   <a href="https://www.fysiokolster.nl" class="projects__externalLink--repo">FysioKolster</a>
 
           <ul class="projects__taxonomy">
             <li class="tag"><span>Jekyll</span> </li>
@@ -69,8 +68,8 @@
 
           </ul></li>
         <li class="hobby projects__link"><p class="projects__title"> Angularcards</p><p class="projects__intro"><img class="projects__img" src="../../static/angularcards.png" />	As an exercise to better learn AngularJS, I’ve build a bogus web app  which let you create “cards”. You can choose an aspect-ratio, whether you want rounded corners or not, a colour, a background image, your preferred font and your text, and the card gets generated.  </p>
-             <a href="https://johanbijlsma.github.io/angularcards/" class="projects__externalLink--site">Angularcards</a>
-              <a href="https://www.fysiokolster.nl" class="projects__externalLink--repo">FysioKolster</a>
+             <a href="https://johanbijlsma.github.io/angularcards/" class="projects__externalLink--site">Angularcards demo</a>
+              <a href="https://github.com/johanbijlsma/angularcards" class="projects__externalLink--repo">Angularcards repo</a>
 
           <ul class="projects__taxonomy">
             <li class="tag"><span>AngularJS</span> </li>
@@ -83,8 +82,8 @@
 
           </ul></li>
         <li class="hobby projects__link"><p class="projects__title"> 2015 Portfolio</p><p class="projects__intro"><img class="projects__img" src="../../static/portfolio2015.png" />To demonstrate my earlier work and experience I’ve build my 2015 portfolio. This is build with Sass with Compass and plain HTML5, jQuery and is hosted on Github Pages.</p>
-           <a href="https://johanbijlsma.github.io/angularcards/" class="projects__externalLink--site">Angularcards</a>
-              <a href="https://www.fysiokolster.nl" class="projects__externalLink--repo">FysioKolster</a>
+           <a href="http://johanbijlsma.github.io/Portfolio2015/" class="projects__externalLink--site">Portfolio2015</a>
+              <a href="https://github.com/johanbijlsma/Portfolio2015" class="projects__externalLink--repo">Portfolio2015 repo</a>
 
           <ul class="projects__taxonomy">
             <li class="tag"><span>Sass (with Compass)</span></li>
@@ -93,8 +92,8 @@
 
           </ul></li>
         <li class="hobby projects__link"><p class="projects__title"> RWD-iframe</p><p class="projects__intro"><img class="projects__img projects__img--extra-padding" src="../../static/rwd-iframe.gif" />To solve a Responsive problem for a client I’ve made a Github repo on styling Iframes, in which I made this solution. The table is in the iframe, and media-queries are set on both the iframe as on the page  in which the iframe is embedded. On the smallest breakpoint, users will get a link to the content, in stead of a table that is to small to read. </p>
-          <a href="https://johanbijlsma.github.io/RWD-iframe/" class="projects__externalLink--site">RWD-iframe</a>
-              <a href="https://www.fysiokolster.nl" class="projects__externalLink--repo">FysioKolster</a>
+          <a href="https://johanbijlsma.github.io/RWD-iframe/" class="projects__externalLink--site">RWD-iframe demo</a>
+              <a href="https://github.com/johanbijlsma/RWD-iframe" class="projects__externalLink--repo">RWD-iframe repo</a>
 
           <ul class="projects__taxonomy">
             <li class="tag"><span>Sass (with Compass)</span></li>

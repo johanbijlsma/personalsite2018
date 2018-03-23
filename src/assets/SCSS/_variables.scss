@@ -6,19 +6,18 @@ $text-color: rgba(24, 205, 202, 1);
 $accent-soft: rgba(79, 128, 225, 1);
 $nearly-black: rgb(80, 80, 80);
 
-$off-white-trans: rgba(240, 240, 241, .95);
-$off-white-trans-2: rgba(240, 240, 241, .15);
-
+$off-white-trans: rgba(240, 240, 241, 0.95);
+$off-white-trans-2: rgba(240, 240, 241, 0.15);
 
 // osx-buttons
-$osx-close: rgba(247,	70,	69, 1);
-$osx-minimize: rgba(250,	182,	37, 1);
-$osx-full: rgba(39,	198,	47, 1);
+$osx-close: rgba(247, 70, 69, 1);
+$osx-minimize: rgba(250, 182, 37, 1);
+$osx-full: rgba(39, 198, 47, 1);
 
 // sizes
 $container-max-width: 1280px;
 
-$margin-05: .5rem;
+$margin-05: 0.5rem;
 $margin-1: 1rem;
 $margin-2: 2rem;
 $margin-3: 3rem;
@@ -26,7 +25,7 @@ $margin-4: 4rem;
 $margin-5: 5rem;
 $margin-10: 10rem;
 
-$padding-05: .5rem;
+$padding-05: 0.5rem;
 $padding-1: 1rem;
 $padding-2: 2rem;
 $padding-3: 3rem;
@@ -42,6 +41,7 @@ $z-master: 100;
 //tranistions
 
 $transition: all 20ms cubic-bezier(0.075, 0.82, 0.165, 1);
+$transition--slow: all 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 // animations
 @keyframes load {
@@ -56,20 +56,54 @@ $transition: all 20ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 
-@keyframes blink {
-  from,to {
-        color: transparent;
-    }
-    50% {
-      color: $off-white;
-    }
+@keyframes footerlinks {
+  0% {
+    opacity: 0;
+    transform: translate(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: $off-white;
+  }
+}
+
+@keyframes colorfade {
+  from,
+  to {
+    background: $accent-soft;
+  }
+  33% {
+    background: $text-color;
+  }
+  66% {
+    background: $accent-bright;
+  }
+  100% {
+   background: $osx-minimize;
+  }
+}
 
 // media-queries
-$sm-only: 'max-width: 320px';
-$md-down: 'max-width: 520px';
-$md-up: 'min-width: 520px';
-$lg-down: 'max-width: 1080px';
-$lg-up: 'min-width: 1080px';
-$xlg-only: 'min-width: 1600px';
+$sm-only: "max-width: 320px";
+$md-down: "max-width: 520px";
+$md-up: "min-width: 520px";
+$lg-down: "max-width: 1080px";
+$lg-up: "min-width: 1080px";
+$xlg-only: "min-width: 1600px";
+
+.md-down-visible {
+  display: block;
+  @media screen and ($md-up) {
+    display: none;
+  }
+}

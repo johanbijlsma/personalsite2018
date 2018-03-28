@@ -58,7 +58,8 @@ body {
           fill: $off-white;
         }
       }
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $accent-bright;
         animation: colorfade 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         transition: background 20ms 40ms ease-in-out,
@@ -68,7 +69,7 @@ body {
         min-height: 9rem;
         padding: 2rem;
         box-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.5);
-        svg{
+        svg {
           width: 51px;
           height: 51px;
         }
@@ -363,27 +364,30 @@ section.offline {
   color: $off-white;
 }
 
-
-.contact__list{
+.contact__list {
   flex-direction: row;
   list-style-type: none;
   display: flex;
-  margin: $margin-3  $margin-3  $margin-3 -$margin-3;
-  .contact__buttons{
+  margin: $margin-3 $margin-3 $margin-3 -$margin-3;
+  .contact__buttons {
     justify-content: flex-start;
     min-width: 20%;
-    a, .contact__link{
+    a,
+    .contact__link {
       padding: $padding-1;
-    background: $accent-bright;
-    color: $off-white;
-    transition: $transition--slow;
-    border: 3px solid transparent;
-    &:hover{
-      // background: $accent-soft;
-      box-shadow: inset 0 60px 0px $accent-soft;
-      border: 3px solid complement($accent-soft);
-      transition: $transition;
-    }
+      background: $accent-bright;
+      color: $off-white;
+      transition: $transition--slow;
+      border: 3px solid transparent;
+      &:hover,
+      &:focus {
+        // background: $accent-soft;
+        box-shadow: inset 0 60px 0px $accent-soft;
+        border: 3px solid complement($accent-soft);
+        transition: $transition;
+   
+        
+      }
     }
   }
 }

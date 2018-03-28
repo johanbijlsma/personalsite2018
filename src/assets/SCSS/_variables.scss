@@ -103,7 +103,7 @@ $xlg-only: "min-width: 1600px";
 
 .md-down-visible {
   display: block;
-  @media screen and ($md-up) {
+  @media screen and ($md-down) {
     display: none;
   }
 }

@@ -4,13 +4,16 @@ import introVue from './components/intro.vue';
 
   <div id="app">
     <nav class="navigation__container">
-      <div class="button__menu menu-closed md-down-visible" id="mobile-toggle" v-bind:class="{active : showMobileMenu }" v-on:click="showMobileMenu = !showMobileMenu">Menu
-      <ul>
+      <form name="menu">
+        <input type="checkbox" name="" id="toggle_menu" >
+        <label for="toggle_menu">Menu</label>
+      <ul class="menu ">
         <li class="navigation__container--links"><router-link :to="{ name: 'intro' }" exact>Home</router-link></li>
         <li class="navigation__container--links"><router-link :to="{ name: 'work' }">Work / Portfolio</router-link></li>
         <li class="navigation__container--links"><router-link :to="{ name: 'contact' }">Contact  </router-link></li>
       </ul>
-      </div>
+
+      </form>
     </nav>
     <div class="header__container">
       <div class="header__container--buttons"><ol>
@@ -29,9 +32,7 @@ import introVue from './components/intro.vue';
 
 
 export default {
-  name: 'App',
-  showMobileMenu: false
-
+  name: 'App'
   };
 
 </script>

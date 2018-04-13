@@ -197,9 +197,9 @@ body {
   ul {
     list-style: none;
     text-align: right;
-    @media screen and ($md-down) {
-      display: none;
-    }
+    // @media screen and ($md-down) {
+    //   display: none;
+    // }
   }
   &--links {
     padding-right: $padding-1;
@@ -215,6 +215,44 @@ body {
       }
     }
   }
+  input[type="checkbox"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    &:checked ~ label{
+      background: $accent-bright;
+    }
+      &:checked ~ ul.menu{
+        display: block !important;
+        flex-direction: column;
+        li a{
+          width: 80vw;
+          display: block;
+
+        }
+      }
+      &:not(:checked) ~ ul.menu{
+        display: none;
+        // outline: 10px solid red;
+        @media ($md-up) {
+          display: block;
+        }
+      }
+     }
+  label{
+    display: inline-block;
+    padding-right: $padding-1;
+    color: $accent-bright;
+    font-weight: 700;
+    padding: $padding-1;
+    background: $accent-soft;
+    color: $off-white;
+    text-decoration: none;
+    @media ($md-up) {
+      display: none;
+    }
+}
 }
 
 .projects {
@@ -365,13 +403,18 @@ section.offline {
 }
 
 .contact__list {
-  flex-direction: row;
+  flex-direction: column;
   list-style-type: none;
   display: flex;
   margin: $margin-3 $margin-3 $margin-3 -$margin-3;
+  @media ($md-up){
+    flex-direction: row;
+  }
   .contact__buttons {
+    flex-wrap: wrap;
     justify-content: flex-start;
     min-width: 20%;
+    margin: 30px 30px 30px -19px;
     a,
     .contact__link {
       padding: $padding-1;
@@ -379,14 +422,13 @@ section.offline {
       color: $off-white;
       transition: $transition--slow;
       border: 3px solid transparent;
+      text-align: center;
       &:hover,
       &:focus {
         // background: $accent-soft;
         box-shadow: inset 0 60px 0px $accent-soft;
         border: 3px solid complement($accent-soft);
         transition: $transition;
-   
-        
       }
     }
   }

@@ -1,23 +1,11 @@
-# Johanbijlsma
+# Personalsite by @johanbijlsma made with Vue
 
-> Setting up the front-end for my personal site. Build setup straight from vue-cli.
+In this Repo I set up my personal site that I made with Vue.
 
-[![Build Status](https://travis-ci.org/johanbijlsma/personalsite2018.svg?branch=master)](https://travis-ci.org/johanbijlsma/personalsite2018)
+![screenshot johanbijlsma.nl](http://johanbijlsma.cmshost.nl/screenshot1.png)
 
-## Build Setup
+You can start a local version after cloning this project.
 
-``` bash
-# install dependencies
-npm install
+and running _npm install_ in your terminal or console. And after installation of all the dependencies by giving the command _npm run dev_
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[Live Demo - My personal Site and Portfolio "Johan Bijlsma"](http://johanbijlsma.nl)

@@ -67,6 +67,15 @@ $transition--slow: all 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 
+@keyframes increaseOpacity  {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes blink {
   from,
   to {

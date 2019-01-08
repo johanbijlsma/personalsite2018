@@ -31,7 +31,7 @@ export default {
          'HTML5, CSS3, (vanilla) JavaScript, AngularJS, Angular2, VueJS, React, Sass, Webpack, NPM, Gulp, Grunt, Git, Jekyll, Jenkins, Bamboo, Bootstrap, jQuery, Photoshop, Illustrator & Sketch. <br /> <br/> Further experienced in styling projects in Django, Wordpress, Jekyll, or custom build on PHP, .Net and Java. Currently my editor of choice is VS Code, and I enjoy Hyper terminal everyday on my Mac.',
       offlineMsg: 'Offline',
       offlineBody:
-         'When not working or coding, I really like hiking outdoors (last year went on a \"4e Musketier Karakterweekend\" to Scotland together with my younger brother Anne), and I\'m also halfway on walking the entire Pieterpad.'
+         `When not working or coding, I really like hiking outdoors (last year went on a "4e Musketier Karakterweekend" to Scotland together with my younger brother Anne), and I'm also halfway on walking the entire Pieterpad.`
 
       };
   }

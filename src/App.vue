@@ -31,29 +31,20 @@ import introVue from './components/intro.vue';
 
 <script>
 
-const mobile_nav = document.querySelector('input#toggle_menu');
-
-// window.addEventListener("resize", closeMobileNav);
-// function closeMobileNav(){
-//   if (mobile_nav.checked == true){
-//         mobile_nav.checked = false
-//       console.log('closeMobileNav() is afgegaan');
-//       }
-//       else {
-//       console.log('anders niet');
-
-//       }
-// }
 export default {
   name: 'App',
 
   watch: {
-    '$route' () {
-      if (mobile_nav.checked == true){
-        mobile_nav.checked = false
+    '$route'() {
+      if (document.querySelector('#toggle_menu').length > 0) {
+        console.log('Mobile_nav was not found...');
+        }
+      else {
+        document.querySelector('#toggle_menu').checked = false;
+        console.log('$route is triggered, and mobile nav closes...  ');
       }
-    }
-  }
+    },
+  },
 };
 
 </script>

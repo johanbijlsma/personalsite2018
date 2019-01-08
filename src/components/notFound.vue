@@ -4,7 +4,7 @@
     <div class="col6">    <img src="https://media.giphy.com/media/g79am6uuZJKSc/giphy.gif" alt="something went wrong"></div>
 
     <p v-html="body"></p>
-    <button class="btn btn-primary" type="submit" ><router-link :to="{ name: 'intro' }">Return to homepage</router-link></button>
+    <button class="btn btn-primary" type="submit" ><router-link :to="{ name: 'intro'}">Return to homepage</router-link></button>
  </div>
 </template>
 
@@ -47,4 +47,4 @@ a {
 p {
   white-space: pre-line;
 }
-</style>  
+</style>

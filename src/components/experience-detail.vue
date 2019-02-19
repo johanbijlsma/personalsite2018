@@ -1,5 +1,5 @@
 <template>
-  <div class="movie">
+  <div class="experience">
     <div class="loading" v-if="loading">
       Loading...
     </div>
@@ -8,18 +8,17 @@
       {{ error }}
     </div>
 
-    <div v-if="movie">
+    <div v-if="experience">
       <br>
       <div
         class="header"
         :style="[{
-          backgroundImage: `url(${imageUrlFor(movie.poster)})`,
-          backgroundPosition: `${(movie.poster.hotspot.x - movie.poster.crop.left) * 100}% ${(movie.poster.hotspot.y - movie.poster.crop.top) * 100}%`
+          backgroundImage: `url(${imageUrlFor(experience.poster)})`,
           }
         ]"
       >
         <div class="header-content">
-          <h1>{{movie.title}}</h1>
+          <h1>{{experience.title}}</h1>
         </div>
       </div>
 
@@ -27,24 +26,13 @@
         <div class="sidebar">
           <img
             class="poster"
-            :src="imageUrlFor( movie.poster ).ignoreImageParams().width(500)"
-            :alt="`Movie poster for ${movie.title}`"
+            :src="imageUrlFor( experience.poster ).ignoreImageParams().width(500)"
+            :alt="`experience poster for ${experience.title}`"
           />
         </div>
 
         <div className="main-content">
           <div v-html="overviewHtml" class="overview" />
-          <h2>Cast</h2>
-          <ul class="list">
-            <li v-for="cast in movie.cast" :key="cast._key">
-              <!-- <router-link :to="{name: 'person', params: {id: cast.person._id}}" > -->
-                <img v-if="cast.person.image" :src="imageUrlFor(cast.person.image).ignoreImageParams().width(240)" />
-                <div>
-                  {{cast.person.name}} as {{cast.characterName}}
-                </div>
-              <!-- </router-link> -->
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -58,22 +46,13 @@ import imageUrlBuilder from "@sanity/image-url";
 
 const imageBuilder = imageUrlBuilder(sanity);
 
-const query = `*[_type == "movie" && _id == $id] {
+const query = `*[_type == "experience" && _id == $id] {
   _id,
   title,
-  overview,
-  releaseDate,
+  period,
   poster,
+  tags,
   "posterUrl": poster.asset->url,
-  "cast": castMembers[] {
-    _key,
-    characterName,
-    "person": person-> {
-      _id,
-      name,
-      image
-    }
-  }
 }[0]
 `;
 
@@ -87,7 +66,7 @@ export default {
   data() {
     return {
       loading: true,
-      movie: null
+      experience: null
     };
   },
   created() {
@@ -101,7 +80,7 @@ export default {
       return imageBuilder.image(source);
     },
     fetchData() {
-      this.error = this.movie = null;
+      this.error = this.experience = null;
       this.loading = true;
 
       const serializers = {
@@ -130,11 +109,11 @@ export default {
       };
 
       sanity.fetch(query, { id: this.id }).then(
-        movie => {
+        experience => {
           this.loading = false;
-          this.movie = movie;
+          this.experience = experience;
           this.overviewHtml = blocksToHtml({
-            blocks: movie.overview,
+            blocks: experience.overview,
             serializers: serializers,
             dataset: sanity.clientConfig.dataset,
             projectId: sanity.clientConfig.projectId
@@ -173,7 +152,7 @@ export default {
   flex-grow: 3;
 }
 
-.movie > h2 {
+.experience > h2 {
   margin: 2rem 0 0 0;
   padding: 0 0.5rem;
   border-bottom: 1px solid #ccc;

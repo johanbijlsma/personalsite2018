@@ -1,8 +1,8 @@
 // import icon from 'react-icons/lib/md/local-movies'
 
 export default {
-  name: 'experience',
-  title: 'experience',
+  name: 'codepen',
+  title: 'Codepen',
   type: 'document',
   fields: [
     {
@@ -20,35 +20,14 @@ export default {
       },
     },
     {
-      name: 'overview',
-      title: 'Overview',
-      type: 'array',
-      of: [{ type: 'block' }],
-    },
-    {
-      name: 'period',
-      title: 'Period',
-      type: 'date',
-      options: {
-        dateFormat: 'MM-YYYY',
-      },
+      name: 'Codepen',
+      title: 'codepen_embed',
+      type: 'text',
     },
     {
       name: 'externalId',
       title: 'External ID',
       type: 'number',
-    },
-    {
-      title: 'Experience type',
-      name: 'experienceType',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Professional', value: 'professional', default: true },
-          { title: 'Hobby', value: 'hobby' },
-        ], // <-- predefined values
-        layout: 'radio', // <-- defaults to 'dropdown'
-      },
     },
     {
       title: 'Tags',
@@ -60,8 +39,8 @@ export default {
       },
     },
     {
-      name: 'poster',
-      title: 'Poster Image',
+      name: 'screenshot',
+      title: 'Screenshot pen',
       type: 'image',
       options: {
         hotspot: true,
@@ -72,27 +51,20 @@ export default {
       name: 'demoUrl',
       type: 'url',
     },
-    {
-      title: 'Repository link',
-      name: 'demoRepo',
-      type: 'url',
-    },
   ],
   preview: {
     select: {
       title: 'title',
-      date: 'period',
-      media: 'poster',
+      media: 'screenshot',
       // castName0: 'castMembers.0.person.name',
       // castName1: 'castMembers.1.person.name',
     },
     prepare(selection) {
-      const year = selection.date && selection.date.split('-')[0];
+      // const year = selection.date && selection.date.split('-')[0];
       // const cast = [selection.castName0, selection.castName1].filter(Boolean).join(', ');
 
       return {
-        title: `${selection.title} ${year ? `(${year})` : ''}`,
-        date: selection.date,
+        title: `${selection.title}`,
         // subtitle: cast,
         media: selection.media,
       };

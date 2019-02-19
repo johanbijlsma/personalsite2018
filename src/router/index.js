@@ -42,12 +42,12 @@ export default new Router({
     },
     {
       path: '/work2',
-      name: 'experience',
+      name: 'experiences',
       component: Experiences,
     },
     {
       path: '/experience/:id',
-      name: 'Experience',
+      name: 'experience',
       component: () =>
       import(/* webpackChunkName: "movie" */ '@/components/experience-detail.vue'),
       props: route => ({ id: route.params.id }),

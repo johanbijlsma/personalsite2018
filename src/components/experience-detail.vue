@@ -14,34 +14,48 @@
         class="header"
         :style="[{
           backgroundImage: `url(${imageUrlFor(experience.poster)})`,
+          backgroundPosition: 'top center'
           }
         ]"
       >
         <div class="header-content">
-          <h1>{{experience.title}}</h1>
+          <h1 >{{experience.title}}</h1>
         </div>
       </div>
 
       <div class="content">
         <div class="sidebar">
-          <img
-            class="poster"
-            :src="imageUrlFor( experience.poster ).ignoreImageParams().width(500)"
-            :alt="`experience poster for ${experience.title}`"
-          />
+          <ul class="projects__taxonomy">
+              <li v-for="tag in experience.tags" class="tag" :key="tag">
+            <span>{{tag}}</span>
+            </li>
+            </ul>
+
+
         </div>
 
         <div className="main-content">
-          <div v-html="overviewHtml" class="overview" />
-        </div>
+           <p class="projects__intro">
+            {{experience.overview[0].children[0].text}}</p>
+            <img
+            class="poster"
+            :src="imageUrlFor( experience.poster ).ignoreImageParams().width(1000)"
+            :alt="`experience poster for ${experience.title}`"
+          />
+            <div class="button--group projects">
+              <h2 class="project__links">Links to demo & the repo</h2>
+             <a :href="experience.demoUrl" class="projects__externalLink--site">Demo {{experience.title}}</a>
+             <a :href="experience.repoUrl" class="projects__externalLink--repo">Git repository {{experience.title}}</a>
+            </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
 <script>
 import sanity from "../sanity";
-import blocksToHtml from "@sanity/block-content-to-html";
+// import blocksToHtml from "@sanity/block-content-to-html";
 import imageUrlBuilder from "@sanity/image-url";
 
 const imageBuilder = imageUrlBuilder(sanity);
@@ -52,7 +66,10 @@ const query = `*[_type == "experience" && _id == $id] {
   period,
   poster,
   tags,
+  overview,
   "posterUrl": poster.asset->url,
+  demoUrl,
+  repoUrl
 }[0]
 `;
 
@@ -83,41 +100,41 @@ export default {
       this.error = this.experience = null;
       this.loading = true;
 
-      const serializers = {
-        types: {
-          summaries: props => {
-            const h = blocksToHtml.h;
+      // const serializers = {
+      //   types: {
+      //     summaries: props => {
+      //       const h = blocksToHtml.h;
 
-            if (!props.node.summaries) {
-              return false;
-            }
+      //       if (!props.node.summaries) {
+      //         return false;
+      //       }
 
-            const summariesArray = props.node.summaries.map(summary => {
-              return h("div", null, [
-                h("p", null, summary.summary),
-                h("span", null, "—"),
-                h("a", { href: summary.url }, summary.author)
-              ]);
-            });
+      //       const summariesArray = props.node.summaries.map(summary => {
+      //         return h("div", null, [
+      //           h("p", null, summary.summary),
+      //           h("span", null, "—"),
+      //           h("a", { href: summary.url }, summary.author)
+      //         ]);
+      //       });
 
-            return h("div", [
-              h("h1", null, props.node.caption),
-              h("div", null, summariesArray)
-            ]);
-          }
-        }
-      };
+      //       return h("div", [
+      //         h("h1", null, props.node.caption),
+      //         h("div", null, summariesArray)
+      //       ]);
+      //     }
+      //   }
+      // };
 
       sanity.fetch(query, { id: this.id }).then(
         experience => {
           this.loading = false;
           this.experience = experience;
-          this.overviewHtml = blocksToHtml({
-            blocks: experience.overview,
-            serializers: serializers,
-            dataset: sanity.clientConfig.dataset,
-            projectId: sanity.clientConfig.projectId
-          });
+          // this.overviewHtml = blocksToHtml({
+          //   blocks: experience.overview,
+          //   serializers: serializers,
+          //   dataset: sanity.clientConfig.dataset,
+          //   projectId: sanity.clientConfig.projectId
+          // });
         },
         error => {
           this.error = error;
@@ -177,7 +194,7 @@ export default {
 }
 
 .header h1 {
-  font-size: 10vw;
+  font-size: 10vmin;
   line-height: 1em;
   margin: 1rem 0 0 0;
   padding: 0;

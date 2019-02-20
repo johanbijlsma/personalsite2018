@@ -18,7 +18,7 @@
 
 
 
-        <router-link :to="{name: 'experience', params: {id: exp._id}}">
+        <router-link class="projects__externalLink--more" :to="{name: 'experience', params: {id: exp._id}}">
 more info 💩
             <!-- <div>
             <div>{{exp.releaseDate.substr(0, 4)}}</div>

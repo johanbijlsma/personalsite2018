@@ -262,7 +262,7 @@ body {
 .projects {
   list-style: none;
   margin-left: 0;
-  padding: 0 !important;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   flex-flow: row;
@@ -376,6 +376,16 @@ body {
         color: $off-white;
       }
     }
+    &--more {
+      &:hover {
+        background: $osx-minimize;
+        color: $off-white;
+      }
+      &:focus {
+        background: $osx-minimize;
+        color: $off-white;
+      }
+    }
   }
   &__taxonomy {
     list-style: none;
@@ -435,5 +445,35 @@ section.offline {
         transition: $transition;
       }
     }
+  }
+}
+
+.button--group{
+  background: $accent-soft;
+  padding: $padding-2;
+  flex-direction: row;
+  justify-content: space-evenly ;
+   a{
+    width: auto;
+    margin-bottom: $margin-05;
+    background: rgba($off-white-trans, 0.5);
+    &:not([href]) {
+      background: rgba(#999, 0.3);
+      color: $off-white-trans;
+      cursor: not-allowed;
+      &:hover{
+        cursor: not-allowed;
+        background: rgba(#999, 0.45);
+        color: $off-white-trans;
+
+      }
+    }
+  }
+  h2.project__links{
+    flex-grow: 2;
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+    color: $off-white;
   }
 }

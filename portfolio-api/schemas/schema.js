@@ -9,6 +9,7 @@ import blockContent from './blockContent';
 // import castMember from './castMember'
 import experience from './experience';
 import codepen from './codepen';
+import otherProjects from './otherProjects';
 // import person from './person'
 // import screening from './screening'
 // import plotSummary from './plotSummary'
@@ -25,6 +26,7 @@ export default createSchema({
     // in the studio.
     experience,
     codepen,
+    otherProjects,
     // person,
     // screening,
     // When added to this list, object types can be used as

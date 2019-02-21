@@ -25,6 +25,9 @@
 
       <div class="content">
         <div class="sidebar">
+          <p><span class="label"> Experience Type: </span> {{experience.experienceType}}</p>
+          <hr>
+          <p><span class="label"> Techniques utilised: </span></p>
           <ul class="projects__taxonomy">
               <li v-for="tag in experience.tags" class="tag" :key="tag">
             <span>{{tag}}</span>
@@ -42,6 +45,7 @@
             :src="imageUrlFor( experience.poster ).ignoreImageParams().width(1000)"
             :alt="`experience poster for ${experience.title}`"
           />
+          <br>
             <div class="button--group projects">
               <h2 class="project__links">Links to demo & the repo</h2>
              <a :href="experience.demoUrl" class="projects__externalLink--site">Demo {{experience.title}}</a>
@@ -69,7 +73,8 @@ const query = `*[_type == "experience" && _id == $id] {
   overview,
   "posterUrl": poster.asset->url,
   demoUrl,
-  repoUrl
+  repoUrl,
+  experienceType
 }[0]
 `;
 
@@ -391,5 +396,13 @@ export default {
   .cast-list-link span {
     display: block;
   }
+  span.label{
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  hr{
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
 }
 </style>

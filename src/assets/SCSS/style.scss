@@ -377,6 +377,16 @@ body {
       }
     }
     &--more {
+      &:after {
+        content: "";
+        background: url(~./assets/images/icons8-info.png) no-repeat;
+        background-size: contain;
+        height: 2rem;
+        width: 3.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: $padding-05;
+      }
       &:hover {
         background: $osx-minimize;
         color: $off-white;

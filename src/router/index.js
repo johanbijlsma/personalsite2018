@@ -2,9 +2,11 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import intro from '@/components/intro';
 import contact from '@/components/contact';
-import work from '@/components/work';
+// import work from '@/components/work';
 import movies from '@/components/movies-example';
-import Experiences from '@/components/experiences';
+// import ExperiencesProfessional from '@/components/experiencesProfessional';
+// import ExperiencesHobby from '@/components/experiencesHobby';
+import experienceDashboard from '@/components/workDashboard';
 // import movie from '@/components/movie-detail';
 import NotFound from '@/components/notFound';
 
@@ -21,7 +23,9 @@ export default new Router({
     {
       path: '/work',
       name: 'work',
-      component: work,
+      // component: work,
+      redirect: '/workoverview',
+
     },
     {
       path: '/contact',
@@ -41,16 +45,16 @@ export default new Router({
       props: route => ({ id: route.params.id }),
     },
     {
-      path: '/work2',
-      name: 'experiences',
-      component: Experiences,
-    },
-    {
       path: '/experience/:id',
       name: 'experience',
       component: () =>
       import(/* webpackChunkName: "movie" */ '@/components/experience-detail.vue'),
       props: route => ({ id: route.params.id }),
+    },
+    {
+      path: '/workoverview',
+      name: 'experienceDashboard',
+      component: experienceDashboard,
     },
     {
       path: '/404',

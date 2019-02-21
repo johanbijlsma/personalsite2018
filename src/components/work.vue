@@ -14,7 +14,7 @@
             <li class="tag"><span>JavaScript</span></li>
             <li class="tag"><span>jQuery</span></li>
             <li class="tag"><span>Gulp</span></li>
-            <li class="tag"><span>GIT</span></li> 
+            <li class="tag"><span>GIT</span></li>
 
           </ul>
           </li>
@@ -51,7 +51,7 @@
 
           </ul>
           </li>
-    </ul> 
+    </ul>
 
     <h2>{{hobby}}</h2>
   <ul class="projects">
@@ -102,11 +102,13 @@
           </ul></li>
         <li class="hobby projects__link"><p class="projects__title"> my Codepen profile</p><p class="projects__intro"><img class="projects__img" src="../../static/codepen.png" />	When solving smaller problems, or just for making one-offs small projects, I love using Codepen. It’s a online coding environment where you write HTML, CSS and JavaScript for building small experiements.</p>
           <a href="https://codepen.io/johanbijlsma" class="projects__externalLink--site">My Codepen Profile</a>
-    </li></ul> 
+    </li></ul>
+ <ExperiencesHobby></ExperiencesHobby>
  </div>
 </template>
 
 <script>
+import ExperiencesHobby from "@/components/experiencesHobby.vue";
 export default {
   name: "work",
   data() {
@@ -124,4 +126,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-</style>  
+</style>

@@ -115,54 +115,7 @@ export default {
 
 };
 
-// const queryHobby = `*[_type == "experience" && experienceType == !"professional"] {
-//   experienceType,
-//   period,
-//   _id,
-//   slug,
-//   title,
-//   poster,
-//   overview,
-// }[0...50]`;
 
-// export default {
-//   props: {
-//     id: {
-//       type: String
-//     }
-//   },
-//   name: "Experiences",
-//   data() {
-//     return {
-//       loading: true,
-//       experiencesHobby: []
-//     };
-//   },
-//   created() {
-//     this.fetchData();
-//   },
-//   watch: {
-//     $route: "fetchData"
-//   },
-//   methods: {
-//     imageUrlFor(source) {
-//       return imageBuilder.image(source);
-//     },
-//     fetchData() {
-//       this.error = this.post = null;
-//       this.loading = true;
-//       sanity.fetch(query).then(
-//         experiences => {
-//           this.loading = false;
-//           this.experiences = experiences;
-//         },
-//         error => {
-//           this.error = error;
-//         }
-//       );
-//     },
-//   }
-// };
 </script>
 
 <style scoped>

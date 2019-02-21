@@ -25,6 +25,7 @@
 
       <div class="content">
         <div class="sidebar">
+          <router-link :to="{ name: 'experienceDashboard' }" class="backbutton"> Back to the Work Dashboard </router-link>
           <p><span class="label"> Experience Type: </span> {{experience.experienceType}}</p>
           <hr>
           <p><span class="label"> Techniques utilised: </span></p>
@@ -48,8 +49,8 @@
           <br>
             <div class="button--group projects">
               <h2 class="project__links">Links to demo & the repo</h2>
-             <a :href="experience.demoUrl" class="projects__externalLink--site">Demo {{experience.title}}</a>
-             <a :href="experience.repoUrl" class="projects__externalLink--repo">Git repository {{experience.title}}</a>
+             <a :href="experience.demoUrl" class="projects__externalLink--site">Demo <br><span class="small">{{experience.title}}</span></a>
+             <a :href="experience.repoUrl" class="projects__externalLink--repo">Git repository <br><span class="small">{{experience.title}}</span></a>
             </div>
       </div>
     </div>
@@ -59,7 +60,6 @@
 
 <script>
 import sanity from "../sanity";
-// import blocksToHtml from "@sanity/block-content-to-html";
 import imageUrlBuilder from "@sanity/image-url";
 
 const imageBuilder = imageUrlBuilder(sanity);
@@ -104,31 +104,6 @@ export default {
     fetchData() {
       this.error = this.experience = null;
       this.loading = true;
-
-      // const serializers = {
-      //   types: {
-      //     summaries: props => {
-      //       const h = blocksToHtml.h;
-
-      //       if (!props.node.summaries) {
-      //         return false;
-      //       }
-
-      //       const summariesArray = props.node.summaries.map(summary => {
-      //         return h("div", null, [
-      //           h("p", null, summary.summary),
-      //           h("span", null, "—"),
-      //           h("a", { href: summary.url }, summary.author)
-      //         ]);
-      //       });
-
-      //       return h("div", [
-      //         h("h1", null, props.node.caption),
-      //         h("div", null, summariesArray)
-      //       ]);
-      //     }
-      //   }
-      // };
 
       sanity.fetch(query, { id: this.id }).then(
         experience => {
@@ -404,5 +379,28 @@ export default {
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.15);
     }
+  .small{
+    font-size: 80%;
+  }
+  .backbutton{
+    display: inline-block;
+    background-image: url(./../assets/images/icons8-left_circular.png);
+    background-repeat: no-repeat;
+    padding: 15px 10px 15px 50px;
+    min-height: 50px;
+    background-color: grey;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 3px rgba(0,0,0,0.35);
+    transition: all 200ms 400ms linear;
+    border: 1px solid rgba(255, 83, 73, 1);
+    border-radius: 3px;
+  }
+    .backbutton:hover{
+      padding: 15px 10px 15px 65px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.85);
+      transition: all 200ms ease-in;
+    }
+
 }
 </style>

@@ -415,6 +415,9 @@ body {
       }
     }
   }
+  .codepen{
+    width: 100%;
+  }
 }
 
 section.offline {
@@ -486,4 +489,8 @@ section.offline {
     text-align: center;
     color: $off-white;
   }
+}
+.header-photo{
+  border-radius: 50%;
+  border: 8px solid $text-color;
 }

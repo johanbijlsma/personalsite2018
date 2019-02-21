@@ -4,12 +4,14 @@
     <p>An overview of all kinds of experiences, both professional as hobby/side projects</p>
  <ExperiencesProfessional></ExperiencesProfessional>
  <ExperiencesHobby></ExperiencesHobby>
+ <Codepens></Codepens>
  </div>
 </template>
 
 <script>
 import ExperiencesHobby from '@/components/experiencesHobby.vue';
 import ExperiencesProfessional from '@/components/experiencesProfessional.vue';
+import Codepens from '@/components/codepens.vue';
 export default {
   name: "experienceDashboard",
   data() {
@@ -23,7 +25,8 @@ export default {
   },
   components: {
     'ExperiencesHobby': ExperiencesHobby,
-    'ExperiencesProfessional': ExperiencesProfessional
+    'ExperiencesProfessional': ExperiencesProfessional,
+    'Codepens': Codepens
   }
 };
 </script>

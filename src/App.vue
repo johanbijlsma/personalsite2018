@@ -5,6 +5,7 @@ import introVue from './components/intro.vue';
 
   <div id="app">
     <nav class="navigation__container">
+  <img src="./assets/images/johan.jpg" alt="Johan Bijlsma" class="header-photo"> <h1>Johan Bijlsma</h1>
       <form name="menu">
         <input type="checkbox" name="" id="toggle_menu">
         <label for="toggle_menu">Menu</label>

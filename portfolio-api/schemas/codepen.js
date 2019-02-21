@@ -20,8 +20,8 @@ export default {
       },
     },
     {
-      name: 'Codepen',
-      title: 'codepen_embed',
+      name: 'codepen_embed',
+      title: 'Codepen Embed code',
       type: 'text',
     },
     {

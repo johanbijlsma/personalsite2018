@@ -26,6 +26,11 @@ export default {
       of: [{ type: 'block' }],
     },
     {
+      name: 'codepen_embed',
+      title: 'Codepen Embed code',
+      type: 'text',
+    },
+    {
       name: 'period',
       title: 'Period',
       type: 'date',
@@ -46,6 +51,7 @@ export default {
         list: [
           { title: 'Professional', value: 'professional', default: true },
           { title: 'Hobby', value: 'hobby' },
+          { title: 'Codepen', value: 'codepen' },
         ], // <-- predefined values
         layout: 'radio', // <-- defaults to 'dropdown'
       },

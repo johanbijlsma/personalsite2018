@@ -1,4 +1,4 @@
-/* Style.scss for the styling of my personal site
+  /* Style.scss for the styling of my personal site
 Build by Johan Bijlsma | johan.bijlsma24@gmail.com | @johanbijlsma  */
 @import "variables";
 @import "mixins";
@@ -490,7 +490,39 @@ section.offline {
     color: $off-white;
   }
 }
-.header-photo{
-  border-radius: 50%;
-  border: 8px solid $text-color;
+.navigation__title{
+  margin-left: 3rem;
+  width: 25vmax;
+  transform: translate(0px, 20px);
+ a {
+  text-decoration: none;
+  h1{
+    color: $text-color;
+    font-weight: 700;
+    margin: 0;
+    transition: $transition;
+    transition-delay: 350ms;
+  }
+}
+  .header-photo{
+    border-radius: 50%;
+    border: 8px solid $text-color;
+    position: fixed;
+    width: 100px;
+    transition: $transition--slow;
+
+  }
+  &.sticky{
+    // border: 8px solid $accent-bright;
+    img.header-photo {
+      transition: $transition--slow;
+      transform: translate(0, -50px);
+      width: 70px;
+      border: 4px solid $accent-bright;
+    }
+    h1{
+      transition: $transition;
+      padding-left: 100px;
+    }
+  }
 }

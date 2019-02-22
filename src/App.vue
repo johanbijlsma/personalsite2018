@@ -21,16 +21,7 @@ import introVue from './components/intro.vue';
 
       </form>
     </nav>
-    <div class="header__container" >
-      <div class="header__container--buttons"><ol>
-        <li>close button</li>
-        <li>minimize button</li>
-        <li>fullscreen button</li>
-      </ol></div>
-          <h1 class="pageheader">johan bijlsma</h1>
-    </div>
-
-    <router-view/>
+       <router-view/>
   </div>
 </template>
 

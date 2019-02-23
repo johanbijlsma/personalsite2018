@@ -1,4 +1,4 @@
-/* Style.scss for the styling of my personal site
+  /* Style.scss for the styling of my personal site
 Build by Johan Bijlsma | johan.bijlsma24@gmail.com | @johanbijlsma  */
 @import "variables";
 @import "mixins";
@@ -262,7 +262,7 @@ body {
 .projects {
   list-style: none;
   margin-left: 0;
-  padding: 0 !important;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   flex-flow: row;
@@ -376,6 +376,26 @@ body {
         color: $off-white;
       }
     }
+    &--more {
+      &:after {
+        content: "";
+        background: url(~./assets/images/icons8-info.png) no-repeat;
+        background-size: contain;
+        height: 2rem;
+        width: 3.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: $padding-05;
+      }
+      &:hover {
+        background: $osx-minimize;
+        color: $off-white;
+      }
+      &:focus {
+        background: $osx-minimize;
+        color: $off-white;
+      }
+    }
   }
   &__taxonomy {
     list-style: none;
@@ -394,6 +414,9 @@ body {
         font-size: 0.85rem;
       }
     }
+  }
+  .codepen{
+    width: 100%;
   }
 }
 
@@ -434,6 +457,72 @@ section.offline {
         border: 3px solid complement($accent-soft);
         transition: $transition;
       }
+    }
+  }
+}
+
+.button--group{
+  background: $accent-soft;
+  padding: $padding-2;
+  flex-direction: row;
+  justify-content: space-evenly ;
+   a{
+    width: auto;
+    margin-bottom: $margin-05;
+    background: rgba($off-white-trans, 0.5);
+    &:not([href]) {
+      background: rgba(#999, 0.3);
+      color: $off-white-trans;
+      cursor: not-allowed;
+      &:hover{
+        cursor: not-allowed;
+        background: rgba(#999, 0.45);
+        color: $off-white-trans;
+
+      }
+    }
+  }
+  h2.project__links{
+    flex-grow: 2;
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+    color: $off-white;
+  }
+}
+.navigation__title{
+  margin-left: 3rem;
+  width: 25vmax;
+  transform: translate(0px, 20px);
+ a {
+  text-decoration: none;
+  h1{
+    color: $text-color;
+    font-weight: 700;
+    margin: 0;
+    transition: $transition;
+    transition-delay: 350ms;
+  }
+}
+  .header-photo{
+    border-radius: 50%;
+    border: 8px solid $text-color;
+    position: fixed;
+    width: 100px;
+    transition: $transition--slow;
+
+  }
+  &.sticky{
+    // border: 8px solid $accent-bright;
+    img.header-photo {
+      transition: $transition--slow;
+      transform: translate(0, -50px);
+      width: 70px;
+      border: 4px solid $accent-bright;
+    }
+    h1{
+      transition: $transition;
+      padding-left: 100px;
     }
   }
 }

@@ -5,6 +5,11 @@ import introVue from './components/intro.vue';
 
   <div id="app">
     <nav class="navigation__container">
+      <div class="navigation__title" v-scroll-class>
+      <router-link :to="{ name: 'intro' }" ><h1>Johan Bijlsma</h1>
+  <img  src="./assets/images/johan.jpg" alt="Johan Bijlsma" class="header-photo" >
+  </router-link>
+      </div>
       <form name="menu">
         <input type="checkbox" name="" id="toggle_menu">
         <label for="toggle_menu">Menu</label>
@@ -16,16 +21,7 @@ import introVue from './components/intro.vue';
 
       </form>
     </nav>
-    <div class="header__container">
-      <div class="header__container--buttons"><ol>
-        <li>close button</li>
-        <li>minimize button</li>
-        <li>fullscreen button</li>
-      </ol></div>
-          <h1 class="pageheader">johan bijlsma</h1>
-    </div>
-
-    <router-view/>
+       <router-view/>
   </div>
 </template>
 
@@ -33,7 +29,6 @@ import introVue from './components/intro.vue';
 
 export default {
   name: 'App',
-
   watch: {
     '$route'() {
       if (document.querySelector('#toggle_menu').length > 0) {
@@ -44,7 +39,7 @@ export default {
         console.log('$route is triggered, and mobile nav closes...  ');
       }
     },
-  },
+  }
 };
 
 </script>

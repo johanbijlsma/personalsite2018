@@ -1,25 +1,25 @@
-  /* Style.scss for the styling of my personal site
+/* Style.scss for the styling of my personal site
 Build by Johan Bijlsma | johan.bijlsma24@gmail.com | @johanbijlsma  */
-@import "variables";
-@import "mixins";
-@import "layout";
+@import 'variables';
+@import 'mixins';
+@import 'layout';
 
 /* Importing and executing normalize for consistent styling across browsers
 https://necolas.github.io/normalize.css/ */
 
-@import "normalize";
+@import 'normalize';
 @include normalize();
 
-@import url("https://fonts.googleapis.com/css?family=Lora|Muli");
+@import url('https://fonts.googleapis.com/css?family=Lora|Muli');
 
 body {
   background: $bg-color;
-  font-family: "Muli", Helvetica, Arial, sans-serif;
+  font-family: 'Muli', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   .header__image {
-    background: url("~./assets/images/ilya-pavlov-87438.jpg") no-repeat;
+    background: url('~./assets/images/ilya-pavlov-87438.jpg') no-repeat;
     // margin: -40px calc(-#{$margin-10}*2) -300px;
     height: 50vh;
     background-size: cover;
@@ -31,7 +31,7 @@ body {
   }
 
   .footer__image {
-    background: url("~./assets/images/schotland.jpeg") no-repeat top center;
+    background: url('~./assets/images/schotland.jpeg') no-repeat top center;
     height: 50vh;
     background-size: cover;
     background-attachment: fixed;
@@ -73,10 +73,11 @@ body {
           height: 51px;
         }
       }
-      &-text{
+      &-text {
         display: block; //to make sure that short links will alwayrs be on a new line
         opacity: 0;
-        animation: increaseOpacity 1s 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation: increaseOpacity 1s 800ms cubic-bezier(0.4, 0, 0.2, 1)
+          forwards;
       }
     }
   }
@@ -105,7 +106,7 @@ body {
           font-size: 0;
           padding-right: 0.3rem;
           &:before {
-            content: "";
+            content: '';
             width: 15px;
             height: 15px;
             background: $osx-close;
@@ -138,14 +139,14 @@ body {
       display: none;
     }
     &::after {
-      content: "|";
+      content: '|';
       animation: blink 1s step-end infinite;
       font-weight: 100;
       text-shadow: none;
       color: $off-white;
     }
     &::before {
-      content: " >_ whoami ";
+      content: ' >_ whoami ';
       opacity: 0.4;
       display: block;
       @media screen and ($md-down) {
@@ -219,32 +220,31 @@ body {
       }
     }
   }
-  input[type="checkbox"]{
+  input[type='checkbox'] {
     position: absolute;
     width: 0;
     height: 0;
     visibility: hidden;
-    &:checked ~ label{
+    &:checked ~ label {
       background: $accent-bright;
     }
-      &:checked ~ ul.menu{
-        display: block !important;
-        flex-direction: column;
-        li a{
-          width: 80vw;
-          display: block;
-
-        }
+    &:checked ~ ul.menu {
+      display: block !important;
+      flex-direction: column;
+      li a {
+        width: 80vw;
+        display: block;
       }
-      &:not(:checked) ~ ul.menu{
-        display: none;
-        // outline: 10px solid red;
-        @media ($md-up) {
-          display: block;
-        }
+    }
+    &:not(:checked) ~ ul.menu {
+      display: none;
+      // outline: 10px solid red;
+      @media ($md-up) {
+        display: block;
       }
-     }
-  label{
+    }
+  }
+  label {
     display: inline-block;
     padding-right: $padding-1;
     color: $accent-bright;
@@ -256,7 +256,7 @@ body {
     @media ($md-up) {
       display: none;
     }
-}
+  }
 }
 
 .projects {
@@ -301,12 +301,12 @@ body {
     height: auto;
     margin: -20px 0 0 0;
 
-    [src=" "] {
+    [src=' '] {
       background: #e5e5e5;
       &:before {
-        content: "JB";
+        content: 'JB';
         color: $nearly-black;
-        font-family: "lora", serif;
+        font-family: 'lora', serif;
         text-shadow: 1px 1px $accent-soft;
         opacity: 0.2;
         text-align: center;
@@ -337,7 +337,7 @@ body {
     text-align: center;
     &--site {
       &:after {
-        content: "";
+        content: '';
         background: url(~./assets/images/np_earth_888750_FFFFFF.svg) no-repeat;
         background-size: contain;
         height: 2rem;
@@ -358,7 +358,7 @@ body {
     &--repo {
       // background: hotpink;
       &:after {
-        content: "";
+        content: '';
         background: url(~./assets/images/Git-Logo-White.png) no-repeat;
         background-size: contain;
         height: 2rem;
@@ -378,7 +378,7 @@ body {
     }
     &--more {
       &:after {
-        content: "";
+        content: '';
         background: url(~./assets/images/icons8-info.png) no-repeat;
         background-size: contain;
         height: 2rem;
@@ -415,8 +415,16 @@ body {
       }
     }
   }
-  .codepen{
+  .codepen {
     width: 100%;
+    .codepen-tag_link-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a {
+        max-width: 50%;
+      }
+    }
   }
 }
 
@@ -434,7 +442,7 @@ section.offline {
   list-style-type: none;
   display: flex;
   margin: $margin-3 $margin-3 $margin-3 -$margin-3;
-  @media ($md-up){
+  @media ($md-up) {
     flex-direction: row;
   }
   .contact__buttons {
@@ -461,12 +469,12 @@ section.offline {
   }
 }
 
-.button--group{
+.button--group {
   background: $accent-soft;
   padding: $padding-2;
   flex-direction: row;
-  justify-content: space-evenly ;
-   a{
+  justify-content: space-evenly;
+  a {
     width: auto;
     margin-bottom: $margin-05;
     background: rgba($off-white-trans, 0.5);
@@ -474,15 +482,14 @@ section.offline {
       background: rgba(#999, 0.3);
       color: $off-white-trans;
       cursor: not-allowed;
-      &:hover{
+      &:hover {
         cursor: not-allowed;
         background: rgba(#999, 0.45);
         color: $off-white-trans;
-
       }
     }
   }
-  h2.project__links{
+  h2.project__links {
     flex-grow: 2;
     width: 100%;
     margin-top: 0;
@@ -490,29 +497,28 @@ section.offline {
     color: $off-white;
   }
 }
-.navigation__title{
+.navigation__title {
   margin-left: 3rem;
   width: 25vmax;
   transform: translate(0px, 20px);
- a {
-  text-decoration: none;
-  h1{
-    color: $text-color;
-    font-weight: 700;
-    margin: 0;
-    transition: $transition;
-    transition-delay: 350ms;
+  a {
+    text-decoration: none;
+    h1 {
+      color: $text-color;
+      font-weight: 700;
+      margin: 0;
+      transition: $transition;
+      transition-delay: 350ms;
+    }
   }
-}
-  .header-photo{
+  .header-photo {
     border-radius: 50%;
     border: 8px solid $text-color;
     position: fixed;
     width: 100px;
     transition: $transition--slow;
-
   }
-  &.sticky{
+  &.sticky {
     // border: 8px solid $accent-bright;
     img.header-photo {
       transition: $transition--slow;
@@ -520,9 +526,69 @@ section.offline {
       width: 70px;
       border: 4px solid $accent-bright;
     }
-    h1{
+    h1 {
       transition: $transition;
       padding-left: 100px;
+    }
+  }
+}
+
+ul.stack {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 !important;
+  flex-wrap: wrap;
+  li {
+    min-width: 200px;
+    min-height: 250px;
+    position: relative;
+    border: 3px solid $accent-soft;
+    border-radius: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin: 0 10px;
+    position: relative;
+    flex-grow: 0;
+    min-height: 200px;
+    margin-bottom: 10px;
+    transition: all 1000ms 20ms ease-in-out;
+    &:after {
+      content: '';
+      display: block;
+      background: rgba($accent-bright, 0.2);
+      z-index: 2;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: inset 0 0 120px;
+      pointer-events: none;
+    }
+    span.techniqueName {
+      position: relative;
+      z-index: 50;
+      color: #fff;
+      max-width: calc(100vw / 3);
+    }
+    img {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    &:hover {
+      flex-grow: 2;
+      img {
+        top: 45px;
+        transition: all 1000ms 20ms ease-in-out;
+      }
     }
   }
 }

@@ -1,17 +1,17 @@
 <template>
   <div class="work">
     <h1>Work dashboard</h1>
-    <p>An overview of all kinds of experiences, both professional as hobby/side projects</p>
- <ExperiencesProfessional></ExperiencesProfessional>
- <ExperiencesHobby></ExperiencesHobby>
- <Codepens></Codepens>
- </div>
+    <p>An overview of all kinds of experiences, both professional as hobby/side projects. You can read more information about a project by clicking on the "Read more about this project"-button. Then you will be redirected to a detail page, where you can find links to a demo page (or the live version), and (if public) a link to the GIT repo.</p>
+    <ExperiencesProfessional></ExperiencesProfessional>
+    <ExperiencesHobby></ExperiencesHobby>
+    <Codepens></Codepens>
+  </div>
 </template>
 
 <script>
-import ExperiencesHobby from '@/components/experiencesHobby.vue';
-import ExperiencesProfessional from '@/components/experiencesProfessional.vue';
-import Codepens from '@/components/codepens.vue';
+import ExperiencesHobby from "@/components/experiencesHobby.vue";
+import ExperiencesProfessional from "@/components/experiencesProfessional.vue";
+import Codepens from "@/components/codepens.vue";
 export default {
   name: "experienceDashboard",
   data() {
@@ -24,14 +24,13 @@ export default {
     };
   },
   components: {
-    'ExperiencesHobby': ExperiencesHobby,
-    'ExperiencesProfessional': ExperiencesProfessional,
-    'Codepens': Codepens
+    ExperiencesHobby: ExperiencesHobby,
+    ExperiencesProfessional: ExperiencesProfessional,
+    Codepens: Codepens
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

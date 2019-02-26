@@ -5,7 +5,7 @@
 
     <div v-if="error" class="error">{{ error }}</div>
 
-    <h3 class="stack">JavaScript Frameworks & Libraries</h3>
+    <h3 class="stack">Design Tools:</h3>
     <ul class="list stack">
       <!-- <li v-for="item in stack" class="list__item stack projects__link" :key="item._id">
         <h3 class="projects__title">{{item.title}}</h3>
@@ -17,7 +17,7 @@
         >
         <p class="projects__intro">{{item.overview[0].children[0].text}}</p>
       </li>-->
-      <li v-for="item in stackJavascript" class="list__item stack" :key="item._id">
+      <li v-for="item in stackDesigntool" class="list__item stack" :key="item._id">
         <img
           class="projects__img"
           v-if="item.techLogo"
@@ -35,7 +35,7 @@ import imageUrlBuilder from "@sanity/image-url";
 
 const imageBuilder = imageUrlBuilder(sanity);
 
-const query = `*[_type == "stack" && stackType == "javascript"] {
+const query = `*[_type == "stack" && stackType == "designTools"] {
   stackType,
   techName,
   techLogo,
@@ -47,11 +47,11 @@ export default {
       type: String
     }
   },
-  name: "TechStackJavascript",
+  name: "TechStackDesignTools",
   data() {
     return {
       loading: true,
-      stackJavascript: []
+      stackDesigntool: []
     };
   },
   created() {
@@ -68,9 +68,9 @@ export default {
       this.error = this.post = null;
       this.loading = true;
       sanity.fetch(query).then(
-        stackJavascript => {
+        stackDesigntool => {
           this.loading = false;
-          this.stackJavascript = stackJavascript;
+          this.stackDesigntool = stackDesigntool;
         },
         error => {
           this.error = error;

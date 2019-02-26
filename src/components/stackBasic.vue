@@ -5,7 +5,7 @@
 
     <div v-if="error" class="error">{{ error }}</div>
 
-    <h2 class="stack">The Basics</h2>
+    <h3 class="stack">The Basics</h3>
     <ul class="list stack">
       <!-- <li v-for="item in stack" class="list__item stack projects__link" :key="item._id">
         <h3 class="projects__title">{{item.title}}</h3>

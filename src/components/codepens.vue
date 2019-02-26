@@ -7,14 +7,17 @@
 
     <h2 class="hobby">My Selected Codepens</h2>
     <ul class="projects codepen">
-      <li v-for="exp in experiences" class="list__item codepen projects__link" :key="exp._id">
-        <h3 class="projects__title">{{exp.title}}</h3>
-        <ul class="projects__taxonomy">
-          <li v-for="tag in exp.tags" class="tag" :key="tag">
-            <span>{{tag}}</span>
-          </li>
-        </ul>
-        <p v-html="exp.codepen_embed"></p>
+      <li v-for="pen in codepens" class="list__item codepen projects__link" :key="pen._id">
+        <h3 class="projects__title">{{pen.title}}</h3>
+        <div class="codepen-tag_link-container">
+          <ul class="projects__taxonomy">
+            <li v-for="tag in pen.tags" class="tag" :key="tag">
+              <span>{{tag}}</span>
+            </li>
+          </ul>
+          <a class="projects__externalLink--more" :href="pen.demoUrl">Visit this on Codepen</a>
+        </div>
+        <p v-html="pen.codepen_embed"></p>
       </li>
     </ul>
   </div>
@@ -26,14 +29,15 @@ import imageUrlBuilder from "@sanity/image-url";
 
 const imageBuilder = imageUrlBuilder(sanity);
 
-const query = `*[_type == "experience" && experienceType == "codepen"] {
+const query = `*[_type == "codepen"] {
   experienceType,
   period,
   _id,
   slug,
   title,
-  poster,
+  screenshot,
   tags,
+  demoUrl,
   codepen_embed
 }[0...50]`;
 
@@ -47,7 +51,7 @@ export default {
   data() {
     return {
       loading: true,
-      experiences: []
+      codepens: []
     };
   },
   created() {
@@ -64,9 +68,9 @@ export default {
       this.error = this.post = null;
       this.loading = true;
       sanity.fetch(query).then(
-        experiences => {
+        codepens => {
           this.loading = false;
-          this.experiences = experiences;
+          this.codepens = codepens;
         },
         error => {
           this.error = error;

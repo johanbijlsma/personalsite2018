@@ -1,5 +1,3 @@
-// import icon from 'react-icons/lib/md/local-movies'
-
 export default {
   name: 'stack',
   title: 'Tech Stack',

@@ -67,7 +67,7 @@ $transition--slow: all 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 
-@keyframes increaseOpacity  {
+@keyframes increaseOpacity {
   0% {
     opacity: 0;
   }
@@ -98,17 +98,35 @@ $transition--slow: all 0.5s 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
     background: $accent-bright;
   }
   100% {
-   background: $osx-minimize;
+    background: $osx-minimize;
+  }
+}
+
+@keyframes hovergrow {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+  33% {
+    transform: scale(0.9, 0.9);
+  }
+  66% {
+    transform: scale(0.95, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
   }
 }
 
 // media-queries
-$sm-only: "max-width: 320px";
-$md-down: "max-width: 520px";
-$md-up: "min-width: 520px";
-$lg-down: "max-width: 1080px";
-$lg-up: "min-width: 1080px";
-$xlg-only: "min-width: 1600px";
+$sm-only: 'max-width: 320px';
+$md-down: 'max-width: 520px';
+$md-up: 'min-width: 520px';
+$lg-down: 'max-width: 1080px';
+$lg-up: 'min-width: 1080px';
+$xlg-only: 'min-width: 1600px';
 
 .md-down-visible {
   display: block;

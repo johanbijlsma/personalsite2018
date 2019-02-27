@@ -85,7 +85,25 @@ body {
 // #app is inside the Vue.js app
 #app {
   color: $nearly-black;
+  p a {
+    color: $text-color;
+    font-weight: 700;
+    box-shadow: 0 0px 0 0 $text-color inset;
+    transition: all 80ms 20ms ease-in-out;
+    // &:hover {
+    //   font-weight: 700;
+    //   color: $accent-soft;
+    //   box-shadow: 0 250px 0 $text-color inset;
 
+    // }
+    &:hover,
+    &:focus {
+      color: $off-white;
+      box-shadow: 200px 0 0 darken($text-color, 20%) inset;
+      transition: all 120ms 10ms ease-in-out;
+      cursor: pointer;
+    }
+  }
   // $color-key: random(4);
 
   // $color-list: $bg-color, $accent-bright, $text-color, $accent-soft;
@@ -264,7 +282,8 @@ body {
   margin-left: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-content: stretch;
   flex-flow: row;
   flex-wrap: wrap;
   &__link {
@@ -273,11 +292,13 @@ body {
     padding: $padding-1;
     position: relative;
     width: 40vw;
+    flex-grow: 1;
+    margin: 1rem;
     @media screen and ($lg-up) {
       width: 35vw;
     }
     @media screen and ($xlg-only) {
-      width: 30vw;
+      width: 12vw;
     }
     @media screen and ($md-down) {
       width: 100vw;
@@ -501,6 +522,10 @@ section.offline {
   margin-left: 3rem;
   width: 25vmax;
   transform: translate(0px, 20px);
+  @media screen and ($md-down) {
+    text-align: center;
+    transform: translate(70px, 20px);
+  }
   a {
     text-decoration: none;
     h1 {
@@ -517,6 +542,9 @@ section.offline {
     position: fixed;
     width: 100px;
     transition: $transition--slow;
+    @media screen and ($md-down) {
+      display: none;
+    }
   }
   &.sticky {
     // border: 8px solid $accent-bright;
@@ -525,6 +553,9 @@ section.offline {
       transform: translate(0, -50px);
       width: 70px;
       border: 4px solid $accent-bright;
+      @media screen and ($md-down) {
+        display: none;
+      }
     }
     h1 {
       transition: $transition;
@@ -559,14 +590,14 @@ ul.stack {
     &:after {
       content: '';
       display: block;
-      background: rgba($accent-bright, 0.2);
+      background: rgba(white, 0.2);
       z-index: 2;
       position: absolute;
       height: 100%;
       top: 0;
       left: 0;
       width: 100%;
-      box-shadow: inset 0 0 120px;
+      box-shadow: inset 0 0 100px;
       pointer-events: none;
     }
     span.techniqueName {
@@ -584,11 +615,17 @@ ul.stack {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      filter: opacity(80%);
     }
     &:hover {
-      flex-grow: 2;
+      // flex-grow: 2;
+      animation: hovergrow 450ms 30ms ease-in;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.45);
+      transition: box-shadow 500ms 80ms linear;
       img {
         top: 45px;
+        filter: opacity(100%);
+
         transition: all 1000ms 20ms ease-in-out;
       }
     }

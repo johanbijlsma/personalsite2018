@@ -282,7 +282,8 @@ body {
   margin-left: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-content: stretch;
   flex-flow: row;
   flex-wrap: wrap;
   &__link {
@@ -291,11 +292,13 @@ body {
     padding: $padding-1;
     position: relative;
     width: 40vw;
+    flex-grow: 1;
+    margin: 1rem;
     @media screen and ($lg-up) {
       width: 35vw;
     }
     @media screen and ($xlg-only) {
-      width: 30vw;
+      width: 12vw;
     }
     @media screen and ($md-down) {
       width: 100vw;
@@ -519,6 +522,10 @@ section.offline {
   margin-left: 3rem;
   width: 25vmax;
   transform: translate(0px, 20px);
+  @media screen and ($md-down) {
+    text-align: center;
+    transform: translate(70px, 20px);
+  }
   a {
     text-decoration: none;
     h1 {
@@ -535,6 +542,9 @@ section.offline {
     position: fixed;
     width: 100px;
     transition: $transition--slow;
+    @media screen and ($md-down) {
+      display: none;
+    }
   }
   &.sticky {
     // border: 8px solid $accent-bright;
@@ -543,6 +553,9 @@ section.offline {
       transform: translate(0, -50px);
       width: 70px;
       border: 4px solid $accent-bright;
+      @media screen and ($md-down) {
+        display: none;
+      }
     }
     h1 {
       transition: $transition;

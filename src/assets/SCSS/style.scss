@@ -85,7 +85,25 @@ body {
 // #app is inside the Vue.js app
 #app {
   color: $nearly-black;
+  p a {
+    color: $text-color;
+    font-weight: 700;
+    box-shadow: 0 0px 0 0 $text-color inset;
+    transition: all 80ms 20ms ease-in-out;
+    // &:hover {
+    //   font-weight: 700;
+    //   color: $accent-soft;
+    //   box-shadow: 0 250px 0 $text-color inset;
 
+    // }
+    &:hover,
+    &:focus {
+      color: $off-white;
+      box-shadow: 200px 0 0 darken($text-color, 20%) inset;
+      transition: all 120ms 10ms ease-in-out;
+      cursor: pointer;
+    }
+  }
   // $color-key: random(4);
 
   // $color-list: $bg-color, $accent-bright, $text-color, $accent-soft;
@@ -559,14 +577,14 @@ ul.stack {
     &:after {
       content: '';
       display: block;
-      background: rgba($accent-bright, 0.2);
+      background: rgba(white, 0.2);
       z-index: 2;
       position: absolute;
       height: 100%;
       top: 0;
       left: 0;
       width: 100%;
-      box-shadow: inset 0 0 120px;
+      box-shadow: inset 0 0 100px;
       pointer-events: none;
     }
     span.techniqueName {
@@ -584,11 +602,17 @@ ul.stack {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      filter: opacity(80%);
     }
     &:hover {
-      flex-grow: 2;
+      // flex-grow: 2;
+      animation: hovergrow 450ms 30ms ease-in;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.45);
+      transition: box-shadow 500ms 80ms linear;
       img {
         top: 45px;
+        filter: opacity(100%);
+
         transition: all 1000ms 20ms ease-in-out;
       }
     }
